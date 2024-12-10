@@ -4,26 +4,25 @@ session_start();
 
 $route = $_GET['route'] ?? 'start';
 
-$script =  null;
+$script = null;
 
 switch ($route) {
-
     case 'start':
         $script = 'start';
-        break;
+    break;
+
 
     case 'game':
         $script = 'game';
-        break;
+    break;
 
     case 'gameover':
         $script = 'gameover';
-        break;
+    break;
 
     default:
         $script = '404';
-        break;
-
+    break;
 }
 
 $capitals = require __DIR__ . '/data/capitals.php';
@@ -32,5 +31,4 @@ require_once __DIR__ . "/scripts/header.php";
 
 require_once __DIR__ . "/scripts/$script.php";
 
-
-require_once __DIR__ . "scripts/footer.php";
+require_once __DIR__ . "/scripts/footer.php";
